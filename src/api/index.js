@@ -3,7 +3,10 @@ import axios from "axios";
 import { config } from "../config.js";
 
 export const useGetUser = () => {
-  const [profile, setProfile] = useState({ person: { name: "" } });
+  const [profile, setProfile] = useState({
+    person: { name: "" },
+    projects: [],
+  });
 
   useEffect(() => {
     const fetchData = async () => {

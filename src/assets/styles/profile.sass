@@ -10,6 +10,12 @@
 
   &-title
     margin-bottom: 1em
+    color: white
+
+    h1
+      margin-bottom: .3em
+    h2
+      font-weight: 100
 
   &-image
     bottom: -2em
@@ -22,3 +28,57 @@
   &-title, &-image
     display: inline-block
     margin-right: 2em
+
+.projects
+
+  &-list
+    top: 50%
+    transform: translateY(-50%)
+    margin: 0 auto
+    position: absolute
+    width: 90%
+    left: 0
+    right: 0
+    margin: 0 auto
+
+  &-slider
+    background-color: #1f1f1f
+    max-width: 1200px
+    margin: 0 auto
+    margin-top: 10em
+    border-radius: 10px
+    height: 200px
+    padding: 2em
+
+    position: relative
+
+  &-item
+    background: #1d1d1d
+    height: 300px
+    border-radius: 5px
+    padding: 2em
+    font-size: 1.5em
+    color: white
+    font-weight: 100
+    overflow: hidden
+    height: 200px
+
+    h1
+      color: #cddc39
+      font-size: 1em
+      font-weight: 200
+
+    h2
+      font-size: 1em
+
+button.projects-button
+  background: #585858
+  border: none
+  border-radius: 50%
+  width: 150px
+  height: 40px
+  color: white
+  margin: 2em
+  padding: .9em
+  outline: none
+  cursor: pointer

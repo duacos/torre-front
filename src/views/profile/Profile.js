@@ -1,23 +1,17 @@
+import React from "react";
+
 import "../../assets/styles/bgprofile.sass";
 import "../../assets/styles/profile.sass";
 import { useGetUser } from "../../api/index.js";
+import Header from "../../components/Header.js";
+import Projects from "../../components/Projects.js";
 
 const Profile = () => {
   const profile = useGetUser();
 
   return (
     <>
-      <header className="context">
-        <div className="profile-header">
-          <div className="profile-image">
-            <img src={profile.person.pictureThumbnail} alt="Profile" />
-          </div>
-          <div className="profile-title">
-            <h1>{profile.person.name}</h1>
-          </div>
-        </div>
-      </header>
-
+      <Header profile={profile} />
       <div className="area">
         <ul className="circles">
           <li></li>
@@ -32,6 +26,8 @@ const Profile = () => {
           <li></li>
         </ul>
       </div>
+
+      <Projects profile={profile} />
     </>
   );
 };
