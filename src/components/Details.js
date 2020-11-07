@@ -30,7 +30,7 @@ const Details = ({ profile }) => {
 
   const strengthsList = () => {
     return profile.strengths.map((strength) => {
-      return <div key={strength.id}>{strength.name}</div>;
+      return <li key={strength.id}>{strength.name}</li>;
     });
   };
 
@@ -39,7 +39,7 @@ const Details = ({ profile }) => {
       <div className="details-separator">
         <div className="details-description">Languages</div>
         <div className="details-content">
-          <ul class="details-img">
+          <ul className="details-img">
             <Langs />
             {langList()}
           </ul>
@@ -49,7 +49,7 @@ const Details = ({ profile }) => {
       <div className="details-separator">
         <div className="details-description">Social media</div>
         <div className="details-content">
-          <ul class="details-img">
+          <ul className="details-img">
             <Social />
             {linksList()}
           </ul>
@@ -59,14 +59,17 @@ const Details = ({ profile }) => {
       <div className="details-separator">
         <div className="details-description">Interests</div>
         <div className="details-content">
-          <ul class="details-img">
+          <ul className="details-img">
             <Learn />
             {interestsList()}
           </ul>
         </div>
       </div>
 
-      <div className=" details-strengths">{strengthsList()}</div>
+      <div className=" details-strengths">
+        <div className="details-description">Strengths</div>
+        <ul className="details-strengths-box">{strengthsList()}</ul>
+      </div>
     </div>
   );
 };

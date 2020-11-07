@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 import MainLayout from "./views/layouts/MainLayout.js";
 
 const ProfileView = lazy(() => import("./views/profile/Profile.js"));
+const HomeView = lazy(() => import("./views/home/Home.js"));
 
 const LayoutComponent = ({ component: Component, ...rest }) => {
   return (
@@ -26,6 +27,8 @@ const Router = () => (
           path="/profile/:username"
           component={ProfileView}
         />
+
+        <LayoutComponent exact path="/" component={HomeView} />
       </Switch>
     </Suspense>
   </BrowserRouter>

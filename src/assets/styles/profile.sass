@@ -1,3 +1,8 @@
+.container
+  max-width: 1920px
+  margin: 0 auto
+  position: relative
+  height: 200px
 
 .profile
   &-header
@@ -8,24 +13,27 @@
     left: 2em
     z-index: 1
 
+  &-head h1, &-head h2
+    color: white
+    text-align: left
   &-title
     margin-bottom: 1em
-    color: white
 
     h1
       margin-bottom: .3em
+  &-headline
     h2
       font-weight: 100
 
   &-image
     bottom: -2em
     position: relative
-    top: 6em
+    top: 5em
   &-image img
     width: 150px
     border-radius: 50%
 
-  &-title, &-image
+  &-head, &-image
     display: inline-block
     margin-right: 2em
 
@@ -93,10 +101,11 @@ button.projects-button
     width: 600px
     font-size: .8em
     overflow-y: auto
-    padding-top: 5em
+    overflow-x: hidden
+    padding-top: 1em
     padding-left: .5em
 
-    div
+    li
       margin: .3em
       background-color: #4b4b4b
       display: inline-block
@@ -140,6 +149,9 @@ button.projects-button
     top: 80%
     transform: translateY(-80%)
 
+  &-strengths-box
+    padding-top: 2em
+
   &-separator:nth-child(odd)
     background: #303030
 
@@ -147,3 +159,71 @@ button.projects-button
     fill: white
     width: 80px
     height: auto
+
+@media only screen and (max-width: 1366px)
+  .projects-item
+    font-size: 1.2em
+
+@media only screen and (max-width: 1024px)
+  .projects-item
+    font-size: 1.2em
+
+  .details-strengths
+    max-width: 400px
+    font-size: .7em
+
+@media only screen and (max-width: 816px)
+  .details-box
+    height: auto
+
+  .details-separator
+    display: block
+    height: 230px
+    padding-top: .8em
+    width: 100%
+    margin-top: 0
+  .details-strengths
+    max-width: 100%
+    margin: 0 auto
+    display: block
+    padding-bottom: 1.8em
+@media only screen and (max-width: 414px)
+  footer
+    margin-top: 0
+
+  .profile-image img
+    width: 100px
+  .profile-head
+    font-size: .7em
+    margin-right: 0
+
+  .profile-image
+
+  .profile-head, .profile-image
+    display: block
+
+  .profile
+    &-image
+      top: 0
+      position: relative
+      width: 100%
+
+      img
+        width: 80px
+
+    &-head h1, &-head h2, &-header
+      text-align: center
+    &-header
+      margin: 0 auto
+      width: 200px
+      height: 200px
+      left: 0
+      right: 0
+      position: absolute
+      top: 3em
+
+  .projects-list
+    font-size: .5em
+
+  .projects-item
+    height: 150px
