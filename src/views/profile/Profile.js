@@ -5,9 +5,11 @@ import "../../assets/styles/profile.sass";
 import { useGetUser } from "../../api/index.js";
 import Header from "../../components/Header.js";
 import Projects from "../../components/Projects.js";
+import Details from "../../components/Details.js";
 
-const Profile = () => {
-  const profile = useGetUser();
+const Profile = (props) => {
+  const username = props.match.params.username;
+  const profile = useGetUser(username);
 
   return (
     <>
@@ -27,7 +29,12 @@ const Profile = () => {
         </ul>
       </div>
 
-      <Projects profile={profile} />
+      <Projects profile={profile} elementToAnalyse="projects" />
+      <Projects profile={profile} elementToAnalyse="jobs" />
+
+      <Details profile={profile} />
+
+      <footer>Orignal website is torre.co</footer>
     </>
   );
 };

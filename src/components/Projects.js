@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import ItemsCarousel from "react-items-carousel";
 
-const Projects = ({ profile }) => {
+const Projects = ({ profile, elementToAnalyse }) => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const chevronWidth = 40;
 
   const projectList = () => {
-    return profile.projects.map((project) => {
+    if (profile[elementToAnalyse].length === 0)
+      return (
+        <div className="projects-empty">
+          This user hasn't posted any {elementToAnalyse}
+        </div>
+      );
+
+    return profile[elementToAnalyse].map((project) => {
       return (
         <div key={project.id} className="projects-item">
           <h1>{project.name}</h1>
